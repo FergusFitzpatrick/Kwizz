@@ -1,0 +1,59 @@
+{% include "layout.html" %}
+
+<header class="container-fluid">
+
+  <!-- Brand Title bar -->
+  <nav class="navbar navbar-light bg-light">
+    <a href="index.html" class="navbar-brand">
+      <img src="/static/img_521884.png" width="80" height="80" class="d-inline-block align-top" alt="Kwizz Logo" loading="lazy"><span class="makeHeading">wizz</span>
+    </a>
+  </nav>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a href="generalKnowledge.php" class="nav-link">General Knowledge</a>
+      </li>
+      <li class="nav-item">
+        <a href="movies.php" class="nav-link">Movies</a>
+      </li>
+      <li class="nav-item">
+        <a href="tv.php" class="nav-link">TV</a>
+      </li>
+      <li class="nav-item">
+        <a href="sport.php" class="nav-link">Sport</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="#" class="nav-link">Log In</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Sign Up</a>
+        </li>
+    </ul>
+  </nav>
+</header>
+<div class="container">
+  {% block body %}
+  {% endblock %}
+</div>
+<footer class="container-fluid page-footer">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link disabled footer-copyright" href="#"><em>Copyright</em> &copy; Fergus Fitzpatrick </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="#" class="nav-link">facebook</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Instagram</a>
+      </li>
+    </ul>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</body>

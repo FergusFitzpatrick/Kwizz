@@ -1,0 +1,37 @@
+{% extends "nav.html" %}
+
+{% block body %}
+<h2>question:</h2>
+<h4>{{ category }}</h4>
+<div class="imageQuestion">
+  <img style="width: 300px; height:300px;" src="img/quizimages/{image}" alt="">
+</div>
+<div class="questionBox">
+  <h2>{{ name }}</h2>
+</div>
+<div class="answerBox">
+  <form>
+    <div class="row">
+      <div class="col-lg-3 col-sm-6">
+        <input class="form-check-input" type="radio" name="answer" value="A">
+        <label class="form-check-label" for="">{answer}</label>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <input class="form-check-input" type="radio" name="answer" value="B">
+        <label class="form-check-label" for="">{fakeanswer2}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-m-6">
+        <input class="form-check-input" type="radio" name="answer" value="C">
+        <label class="form-check-label" for="">{fakeanswer1}</label>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <input class="form-check-input" type="radio" name="answer" value="D">
+        <label class="form-check-label" for="">{fakeanswer3}</label>
+      </div>
+    </div>
+  </form>
+</div>
+<button class="btn btn-success"type="submit">Next</button>
+{% endblock %}

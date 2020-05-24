@@ -1,0 +1,24 @@
+{% extends "nav.html" %}
+
+{% block body %}
+<h1>Lets start the Quiz!</h1>
+  <form action="{{ url_for('quiz') }}" method="POST">
+    <div class="form-group">
+      <label>Please Enter you name:</label>
+      <input class="form-control" type="text" placeholder="Player 1" name="name">
+    </div>
+
+    <div class="form-group">
+      <label>Please select a quiz category:</label>
+      <select id="categorySelection" name="category" class="form-control">
+        <option value="movies">Movies</option>
+        <option value="tv">TV</option>
+        <option value="sport">Sport</option>
+        <option value="generalKnowledge">General Knowledge</option>
+      </select>
+    </div>
+    <div class="row justify-content-md-end" style="padding-right: 15px;">
+        <button type="submit" class="btn btn-success">Next</button>
+    </div>
+  </form>
+  {% endblock %}

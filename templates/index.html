@@ -1,0 +1,23 @@
+{% extends "nav.html" %}
+
+{% block body %}
+  <div class="row">
+    <div class="col-lg-6 col-sm-12">
+      <h1>How to Play?</h1>
+      <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis orci a sem commodo tristique mollis ut urna. Mauris eget turpis vel metus dapibus eleifend a fringilla justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Pellentesque quis orci a sem commodo tristique mollis ut urna. Mauris eget turpis vel metus dapibus eleifend a fringilla justo.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+      <img class="frontPageImg" src="/static/shutterstock_599738306.jpg" alt="Sports equipment image">
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col-lg-4">
+      <a href="{{ url_for('quizStart') }}" class="btn btn-info">Start a quiz!</a>
+    </div>
+  </div>
+
+{% endblock %}
