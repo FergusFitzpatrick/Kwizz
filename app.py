@@ -4,17 +4,12 @@ from flask import Flask, render_template, request
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-app = Flask(__name__)
 
-engine = create_engine(os.getenv("DATABASE_URL"))
+engine = create_engine('postgresql://ferguspatrick:tiger@localhost:5432/Kwizz')
 db = scoped_session(sessionmaker(bind=engine))
 
-def main():
-    f = open("questions.csv")
-    reader = csv.reader(f)
-    for id,name,answer,fakeanswer1,fakeanswer2,fakeanswer3,category,image in reader:
-		db.execute("INSERT INTO questions (id, name, answer, fakeanswer1, fakeanswer2, fakeanswer3, category, image) VALUES (:id, :name, :answer, :fakeanswer1, :fakeanswer2, :fakeanswer3, :category, :image)",
-			{"id": id, "name": name, "answer": answer, "fakeanswer1": fakeanswer1, "fakeanswer2": fakeanswer2, "fakeanswer3": fakeanswer3, "category": category, "image": image})
+app = Flask(__name__)
+
 
 @app.route('/')
 def index():
@@ -26,11 +21,14 @@ def quizStart():
 	title = "Let's Start!"
 	return render_template("quizstart.html", title=title)
 
-@app.route('/quiz', methods=['POST'])
-def quiz():
-	name = request.form.get('name')
-	category = request.form.get('category')
-	return render_template("quiztemplate.html", name=name, category=category)
+@app.route('/initQuiz', methods=['POST', 'GET'])
+def initQuiz():
+    count = 1
+    title = (f"Q. {count}")
+    name = request.form.get('name')
+    category = request.form.get('category')
+    record = db.execute("SELECT * FROM questions").fetchone()
+    return render_template("quiztemplate.html", title=title, record=record, name=name, category=category)
 
 
 if __name__ == '__main__':

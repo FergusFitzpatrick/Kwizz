@@ -5,9 +5,8 @@
     <div class="col-lg-6 col-sm-12">
       <h1>How to Play?</h1>
       <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis orci a sem commodo tristique mollis ut urna. Mauris eget turpis vel metus dapibus eleifend a fringilla justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Pellentesque quis orci a sem commodo tristique mollis ut urna. Mauris eget turpis vel metus dapibus eleifend a fringilla justo.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Welcome to Kwizz! Log in, sign up or just hit the button below and start a quiz! Choose a category and get guessing!
+        There are 10 questions in round 1. Each question is worth 1 point, to get the ad free verion, reach 100 points or simply purchase it <a href="#">here!</a>
       </p>
     </div>
     <div class="col-lg-6 col-sm-12">
@@ -15,9 +14,17 @@
     </div>
   </div>
   <div class="row justify-content-md-center">
-    <div class="col-lg-4">
+    <div class="col-lg-12 col-sm-12">
       <a href="{{ url_for('quizStart') }}" class="btn btn-info">Start a quiz!</a>
     </div>
+
+    <ul>
+        {% for record in records %}
+          <li>
+            {{ record.name }} and {{ record.answer }}
+          </li>
+          {% endfor %}
+    </ul>
   </div>
 
 {% endblock %}

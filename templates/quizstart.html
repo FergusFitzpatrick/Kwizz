@@ -2,7 +2,7 @@
 
 {% block body %}
 <h1>Lets start the Quiz!</h1>
-  <form action="{{ url_for('quiz') }}" method="POST">
+  <form action="{{ url_for('initQuiz') }}" method="POST">
     <div class="form-group">
       <label>Please Enter you name:</label>
       <input class="form-control" type="text" placeholder="Player 1" name="name">
